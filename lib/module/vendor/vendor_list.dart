@@ -46,7 +46,7 @@ class _VendorListPageState extends State<VendorListPage> {
               ? IconButton(
                   icon: Icon(Icons.print),
                   onPressed: () {
-                      Navigator.pushNamed(context, '/print-vendor-list', arguments: vendrorPrintList);
+                      Navigator.pushNamed(context, '/print-vendor-list', arguments: vendorPrintList);
                   },
                 )
               : Container(),
@@ -82,7 +82,6 @@ class VendorList extends StatefulWidget {
 
 class _VendorListState extends State<VendorList> {
   bool valueCheckbox = false;
-  Vendor _vendor = new Vendor();
 
   @override
   Widget build(BuildContext context) {
@@ -115,12 +114,12 @@ class _VendorListState extends State<VendorList> {
                         if(valueCheckbox == true) {
                           vendorList.forEach((vendor) {
                             vendor.checkBox = true;
-                            vendrorPrintList.add(vendor);
+                            vendorPrintList.add(vendor);
                           });
                         } else {
                           vendorList.forEach((vendor) {
                             vendor.checkBox = false;
-                            vendrorPrintList.remove(vendor);
+                            vendorPrintList.remove(vendor);
                           });
                         }
                       });
@@ -173,6 +172,9 @@ class _VendorListState extends State<VendorList> {
                                             iconColor: Colors.white,
                                             onChange: (index) {
                                               if (index == 1) {
+                                                setState(() {
+                                                  vendorList.remove(vendorList[index]);
+                                                });
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
                                                     SnackBar(
@@ -246,11 +248,11 @@ class _VendorListState extends State<VendorList> {
                                 setState(() {
                                   vendorList[index].checkBox = value;
                                   if (vendorList[index].checkBox == true) {
-                                    vendrorPrintList.add(vendorList[index]);
-                                    print(vendrorPrintList.toString());
+                                    vendorPrintList.add(vendorList[index]);
+                                    print(vendorPrintList.toString());
                                   }
                                   else if (vendorList[index].checkBox == false) {
-                                    vendrorPrintList.remove(vendorList[index]);
+                                    vendorPrintList.remove(vendorList[index]);
                                   }
                                 });
                               }),
@@ -282,6 +284,9 @@ class _VendorListState extends State<VendorList> {
                                         iconColor: Colors.white,
                                         onChange: (index) {
                                           if (index == 1) {
+                                            setState(() {
+                                              vendorList.remove(vendorList[index]);
+                                            });
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                                 SnackBar(
@@ -365,7 +370,7 @@ class _VendorListState extends State<VendorList> {
           child: Row(
             children: [
               IconButton(icon: Icon(Icons.search), onPressed: () {
-
+                Navigator.pushNamed(context, '/search-vendor');
               }),
               IconButton(icon: Icon(Icons.sort), onPressed: () {
                 Navigator.pushNamed(context, '/vendor-sort');

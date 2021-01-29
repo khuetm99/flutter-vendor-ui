@@ -69,4 +69,6 @@ List<Vendor> recommendVendorList = [
   ),
 ];
 
-List<Vendor> vendrorPrintList = [];
+List<Vendor> vendorPrintList = [];
+
+List<Vendor> vendorSearchPrintList = [];

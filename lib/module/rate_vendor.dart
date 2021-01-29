@@ -37,8 +37,12 @@ class _BodyState extends State<Body> {
   String selectedContract;
   int _radioValue1;
 
-  double vendorScore = 0.0;
-  double temp = 0.0;
+  double temp1 = 0.0;
+  double temp2 = 0.0;
+  double temp3 = 0.0;
+  double temp4 = 0.0;
+  double temp5 = 0.0;
+
   int _radioValue2;
 
   int _radioValue3;
@@ -50,13 +54,13 @@ class _BodyState extends State<Body> {
       _radioValue1 = value;
       switch (_radioValue1) {
         case 0:
-          return vendorScore = vendorScore + 0.6;
+          return temp1 =  0.6;
           break;
         case 1:
-          return vendorScore = vendorScore + 1.4;
+          return temp1 =  1.4;
           break;
         case 2:
-          return vendorScore = vendorScore + 2.0;
+          return temp1 =  2.0;
           break;
       }
     });
@@ -68,13 +72,13 @@ class _BodyState extends State<Body> {
 
       switch (_radioValue2) {
         case 0:
-          return vendorScore = vendorScore + 0.6;
+          return temp2 =  0.6;
           break;
         case 1:
-          return vendorScore = vendorScore + 1.4;
+          return temp2 =  1.4;
           break;
         case 2:
-          return vendorScore = vendorScore + 2.0;
+          return temp2 =  2.0;
           break;
       }
     });
@@ -86,13 +90,13 @@ class _BodyState extends State<Body> {
 
       switch (_radioValue3) {
         case 0:
-          return vendorScore = vendorScore + 0.6;
+          return temp3 = 0.6;
           break;
         case 1:
-          return vendorScore = vendorScore + 1.4;
+          return temp3 = 1.4;
           break;
         case 2:
-          return vendorScore = vendorScore + 2.0;
+          return temp3 =  2.0;
           break;
       }
     });
@@ -104,13 +108,13 @@ class _BodyState extends State<Body> {
 
       switch (_radioValue4) {
         case 0:
-          return vendorScore = vendorScore + 0.6;
+          return temp4 =  0.6;
           break;
         case 1:
-          return vendorScore = vendorScore + 1.4;
+          return temp4 =  1.4;
           break;
         case 2:
-          return vendorScore = vendorScore + 2.0;
+          return temp4 =  2.0;
           break;
       }
     });
@@ -122,16 +126,20 @@ class _BodyState extends State<Body> {
 
       switch (_radioValue5) {
         case 0:
-          return vendorScore = vendorScore + 0.6;
+          return temp5 =  0.6;
           break;
         case 1:
-          return vendorScore = vendorScore + 1.4;
+          return temp5 =  1.4;
           break;
         case 2:
-          return vendorScore = vendorScore + 2.0;
+          return temp5 =  2.0;
           break;
       }
     });
+  }
+
+  double sumVendor(double t1, double t2, double t3, double t4, double t5) {
+    return t1 + t2 + t3 +t4 +t5;
   }
 
   @override
@@ -617,7 +625,7 @@ class _BodyState extends State<Body> {
                                 controller: rateController,
                                 onChanged: (text) {},
                                 decoration: InputDecoration(
-                                  hintText: vendorScore.toString(),
+                                  hintText: sumVendor(temp1, temp2, temp3, temp4, temp5).toString(),
                                   border: InputBorder.none,
                                   suffixIcon: GestureDetector(
                                     onTap: () {

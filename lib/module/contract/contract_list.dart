@@ -141,7 +141,8 @@ class _ContractListState extends State<ContractList> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: widget.isPrint == true
-                      ? Row(children: [
+                      ? Row(
+                      children: [
                           Expanded(
                             child: Container(
                               height: 150,
@@ -356,7 +357,9 @@ class _ContractListState extends State<ContractList> {
           ]),
           child: Row(
             children: [
-              IconButton(icon: Icon(Icons.search), onPressed: () {}),
+              IconButton(icon: Icon(Icons.search), onPressed: () {
+                Navigator.pushNamed(context, '/search-contract');
+              }),
               IconButton(
                   icon: Icon(Icons.sort),
                   onPressed: () {

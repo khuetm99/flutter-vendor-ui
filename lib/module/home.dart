@@ -36,7 +36,7 @@ class DrawerCustom extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top : 8.0),
           child: ListTile(
-            leading: CustomText(text :'vendors', weight: FontWeight.w300,),
+            leading: CustomText(text :'Vendors', weight: FontWeight.w300,),
           ),
         ),
         ListTile(
@@ -53,12 +53,13 @@ class DrawerCustom extends StatelessWidget {
           leading: Icon(Icons.list),
           title: CustomText(text: "My vendors"),
         ),
-        // ListTile(
-        //   onTap: () {
-        //   },
-        //   leading: Icon(Icons.pie_chart),
-        //   title: CustomText(text: "vendors Spend Report"),
-        // ),
+        ListTile(
+          onTap: () {
+            Navigator.pushNamed(context, '/vendor-statistic');
+          },
+          leading: Icon(Icons.pie_chart),
+          title: CustomText(text: "vendors Spend Report"),
+        ),
         Divider(),
         Padding(
           padding: const EdgeInsets.only(top : 8.0),
@@ -276,6 +277,7 @@ class _BodyState extends State<Body> {
                                           IconButton(
                                               icon: Icon(Icons.add),
                                               onPressed: () {
+                                                vendorList.add(recommendVendorList[index]);
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
                                                   SnackBar(

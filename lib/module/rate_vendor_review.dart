@@ -87,17 +87,14 @@ class _VendorReviewListState extends State<VendorReviewList> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(7.0),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 5.0),
-                          child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.start,
-                            children: [
-                              CustomText(
-                                  text: 'Hợp đồng cung cấp vật tư'),
-                            ],
-                          ),
+                        padding: const EdgeInsets.only(left :12.0, top: 2),
+                        child: Row(
+                          mainAxisAlignment:
+                          MainAxisAlignment.start,
+                          children: [
+                            CustomText(
+                                text: 'Hợp đồng cung cấp vật tư', weight: FontWeight.w300,),
+                          ],
                         ),
                       ),
                       Spacer(),

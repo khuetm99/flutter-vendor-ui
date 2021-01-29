@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs
-
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -38,6 +36,7 @@ class PrintContractListPage extends StatelessWidget {
   Future<Uint8List> _generatePdf(PdfPageFormat format, List<Contract> contractList) async {
     final pdf = pw.Document();
 
+
     for(int i = 0; i< contractList.length; i++)
     {
       pdf.addPage(
@@ -52,7 +51,7 @@ class PrintContractListPage extends StatelessWidget {
                     pw.Row(
                         mainAxisAlignment: pw.MainAxisAlignment.center,
                         children:[
-                          pw.Text('CONG HOA XA HOI CHU NGHIA VIET NAM ', style: pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)),
+                          pw.Text('CONG HOA XA HOI CHU NGHIA VIET NAM ', style: pw.TextStyle( fontSize: 25, fontWeight: pw.FontWeight.bold)),
                         ]
                     ),
                   ),

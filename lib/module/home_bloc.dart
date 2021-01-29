@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_vendor_ui/base/base_bloc.dart';
 import 'package:flutter_vendor_ui/base/base_event.dart';
-import 'package:flutter_vendor_ui/model/vendor_model.dart';
 import 'package:flutter_vendor_ui/module/search_event.dart';
 import 'package:rxdart/rxdart.dart';
 

@@ -32,3 +32,5 @@ List<Contract> contractList = [
 ];
 
 List<Contract> contractPrintList = [];
+
+List<Contract> contractSearchPrintList = [];
