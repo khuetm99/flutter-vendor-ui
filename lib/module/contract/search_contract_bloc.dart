@@ -27,6 +27,10 @@ class SearchContractBloc extends BaseBloc with ChangeNotifier {
 
   handleSearch(event) {
     SearchEvent e = event as SearchEvent;
+    if(e.text == null) {
+      _searchSubject.sink.add(contractList);
+      return;
+    }
 
     _filter(e.text.allInCaps).then((result) {
       _searchSubject.sink.add(result);

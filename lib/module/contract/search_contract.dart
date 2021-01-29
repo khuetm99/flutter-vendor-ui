@@ -106,7 +106,7 @@ class _SearchContractState extends State<SearchContract> {
                         SearchEvent(text:text));
                   },
                   decoration: InputDecoration(
-                    hintText: "Tìm kiếm nhà cung cấp theo sản phẩm",
+                    hintText: "Tìm kiếm hợp đồng",
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.search),
                     suffixIcon: GestureDetector(

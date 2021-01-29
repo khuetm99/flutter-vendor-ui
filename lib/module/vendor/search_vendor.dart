@@ -106,7 +106,7 @@ class _VendorListSearchState extends State<VendorListSearch> {
                     bloc.event.add(SearchEvent(text: text));
                   },
                   decoration: InputDecoration(
-                    hintText: "Tìm kiếm nhà cung cấp theo sản phẩm",
+                    hintText: "Tìm kiếm nhà cung cấp",
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.search),
                     suffixIcon: GestureDetector(

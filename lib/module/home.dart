@@ -1,11 +1,20 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
+import 'package:flutter_vendor_ui/model/notification_data.dart';
 import 'package:flutter_vendor_ui/model/vendor_data.dart';
 import 'package:flutter_vendor_ui/module/home_bloc.dart';
 import 'package:flutter_vendor_ui/module/search_event.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isPress = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,9 +24,25 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         bottomOpacity: 0,
         actions: [
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {
+          isPress == false ? Badge(
+            badgeColor:Colors.redAccent,
+            position: BadgePosition.topEnd(top: 3, end: 4),
+            badgeContent: Text(NotifyList.length.toString(), style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),),
+            child: IconButton(icon: Icon(Icons.notifications), onPressed: () {
+              setState(() {
+                isPress = true;
+              });
+              Navigator.pushNamed(context, '/notification');
+            }),
+          ) :   IconButton(icon: Icon(Icons.notifications), onPressed: () {
+            setState(() {
+              isPress = true;
+            });
             Navigator.pushNamed(context, '/notification');
-          })
+          }),
         ],
       ),
       drawer: DrawerCustom(),
