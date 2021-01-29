@@ -3,6 +3,7 @@ import 'package:flutter_vendor_ui/module/contract/contract_detail.dart';
 import 'package:flutter_vendor_ui/module/contract/contract_edit_history.dart';
 import 'package:flutter_vendor_ui/module/contract/contract_list.dart';
 import 'package:flutter_vendor_ui/module/contract/contract_sort.dart';
+import 'package:flutter_vendor_ui/module/contract/notification_contract.dart';
 import 'package:flutter_vendor_ui/module/contract/print_contract.dart';
 import 'package:flutter_vendor_ui/module/contract/print_contract_list.dart';
 import 'package:flutter_vendor_ui/module/contract/search_contract.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/vendor-sort' : (context) => VendorSortPage(),
         '/vendor-statistic' : (context) => VendorStatisticPage(),
         '/contract-list': (context) => ContractListPage(),
+        '/notification-contract-list': (context) => NotificationContractPage(),
         '/search-contract': (context) => SearchContractPage(),
         '/contract-sort': (context) => ContractSortPage(),
         '/contract-detail': (context) => ContractDetailPage(),

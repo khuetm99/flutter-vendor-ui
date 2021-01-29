@@ -24,14 +24,14 @@ class HomeBloc extends BaseBloc with ChangeNotifier {
 
   handleSearch(event) {
     SearchEvent e = event as SearchEvent;
-    print(e.text);
-    if(e.text == "hard")
+    String query =  "hardware";
+    if(e.text == "hardware")
      {
        searchSink.add(true);
      }
     else if (e.text == null) {
       searchSink.add(false);
-    } else {
+    } else if (e.text.isEmpty) {
       searchSink.add(false);
     }
   }

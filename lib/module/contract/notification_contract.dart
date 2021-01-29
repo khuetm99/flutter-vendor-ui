@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
 import 'package:flutter_vendor_ui/model/notification_data.dart';
 
-class NotificationPage extends StatelessWidget {
+class NotificationContractPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class NotificationPage extends StatelessWidget {
         ),
         backgroundColor: Color(0xFF00BFA5),
         title:
-        CustomText(text: 'Notification', color: Colors.white, size: 18),
+        CustomText(text: 'Notification Contract', color: Colors.white, size: 18),
         centerTitle: true,
         bottomOpacity: 0,
       ),
@@ -33,7 +33,7 @@ class _NotificationListState extends State<NotificationList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: notificationList.length,
+      itemCount: notificationContractList.length,
       itemBuilder: (_, index) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(
@@ -55,7 +55,7 @@ class _NotificationListState extends State<NotificationList> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomText(text: 'Title : ', color: Colors.blueGrey, weight: FontWeight.bold,),
-                    CustomText(text: notificationList[index].title),
+                    CustomText(text: notificationContractList[index].title, color: Colors.red),
                   ],
                 ),
               ),
@@ -65,7 +65,7 @@ class _NotificationListState extends State<NotificationList> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomText(text: 'Content : ',color: Colors.blueGrey, weight: FontWeight.bold,),
-                    CustomText(text: notificationList[index].content),
+                    CustomText(text: notificationContractList[index].content),
                   ],
                 ),
               ),

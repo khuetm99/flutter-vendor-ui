@@ -41,7 +41,7 @@ class PrintContractListPage extends StatelessWidget {
     {
       pdf.addPage(
         pw.Page(
-          pageFormat: format,
+          pageFormat: PdfPageFormat.a4,
           build: (context) {
             return pw.Column(
                 children: [
@@ -156,7 +156,7 @@ class PrintContractListPage extends StatelessWidget {
                     child:
                     pw.Row(
                         children:[
-                          pw.Text('price : \$' + contractList[i].amount, style: pw.TextStyle(fontSize: 25)),
+                          pw.Text('Gia tien : \$' + contractList[i].amount, style: pw.TextStyle(fontSize: 25)),
                         ]
                     ),
                   ),

@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           isPress == false ? Badge(
             badgeColor:Colors.redAccent,
             position: BadgePosition.topEnd(top: 3, end: 4),
-            badgeContent: Text(NotifyList.length.toString(), style: TextStyle(
+            badgeContent: Text(notificationList.length.toString(), style: TextStyle(
               color: Colors.white,
               fontSize: 14,
             ),),
@@ -66,7 +66,7 @@ class DrawerCustom extends StatelessWidget {
         ),
         ListTile(
           onTap: () {
-            Navigator.pushNamed(context, '/home');
+            //Navigator.pushNamed(context, '/home');
           },
           leading: Icon(Icons.recommend),
           title: CustomText(text: "Recommend vendor"),

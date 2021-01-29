@@ -1,7 +1,9 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
 import 'package:flutter_vendor_ui/model/contract_data.dart';
 import 'package:flutter_vendor_ui/model/contract_model.dart';
+import 'package:flutter_vendor_ui/model/notification_data.dart';
 import 'package:flutter_vendor_ui/simple_account_menu.dart';
 
 class ContractListPage extends StatefulWidget {
@@ -11,6 +13,8 @@ class ContractListPage extends StatefulWidget {
 
 class _ContractListPageState extends State<ContractListPage> {
   bool isPrint = false;
+  bool isPress = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +34,25 @@ class _ContractListPageState extends State<ContractListPage> {
         centerTitle: true,
         bottomOpacity: 0,
         actions: [
+          isPress == false ? Badge(
+            badgeColor:Colors.redAccent,
+            position: BadgePosition.topEnd(top: 3, end: 4),
+            badgeContent: Text(notificationContractList.length.toString(), style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+            ),),
+            child: IconButton(icon: Icon(Icons.notifications), onPressed: () {
+              setState(() {
+                isPress = true;
+              });
+              Navigator.pushNamed(context, '/notification-contract-list');
+            }),
+          ) :   IconButton(icon: Icon(Icons.notifications), onPressed: () {
+            setState(() {
+              isPress = true;
+            });
+            Navigator.pushNamed(context, '/notification-contract-list');
+          }),
           isPrint == true
               ? IconButton(
             icon: Icon(Icons.delete),

@@ -40,7 +40,7 @@ class PrintContractPage extends StatelessWidget {
 
     pdf.addPage(
       pw.Page(
-        pageFormat: format,
+        pageFormat: PdfPageFormat.a4,
         build: (context) {
           return pw.Column(
               children: [
