@@ -34,7 +34,7 @@ class _ContractListPageState extends State<ContractListPage> {
         centerTitle: true,
         bottomOpacity: 0,
         actions: [
-          isPress == false ? Badge(
+          isPress == false && isPrint == false ? Badge(
             badgeColor:Colors.redAccent,
             position: BadgePosition.topEnd(top: 3, end: 4),
             badgeContent: Text(notificationContractList.length.toString(), style: TextStyle(
@@ -47,12 +47,12 @@ class _ContractListPageState extends State<ContractListPage> {
               });
               Navigator.pushNamed(context, '/notification-contract-list');
             }),
-          ) :   IconButton(icon: Icon(Icons.notifications), onPressed: () {
+          ) :  isPrint == false ? IconButton(icon: Icon(Icons.notifications), onPressed: () {
             setState(() {
               isPress = true;
             });
             Navigator.pushNamed(context, '/notification-contract-list');
-          }),
+          }) : Container(),
           isPrint == true
               ? IconButton(
             icon: Icon(Icons.delete),
