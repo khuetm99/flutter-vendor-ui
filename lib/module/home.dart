@@ -70,21 +70,21 @@ class DrawerCustom extends StatelessWidget {
           onTap: () {
             //Navigator.pushNamed(context, '/home');
           },
-          leading: Icon(Icons.recommend),
+          leading: Icon(Icons.recommend, color: Colors.black87),
           title: CustomText(text: "Recommend vendor"),
         ),
         ListTile(
           onTap: () {
             Navigator.pushNamed(context, '/vendor-list');
           },
-          leading: Icon(Icons.list),
+          leading: Icon(Icons.list, color: Colors.black87),
           title: CustomText(text: "My vendors"),
         ),
         ListTile(
           onTap: () {
             Navigator.pushNamed(context, '/vendor-statistic');
           },
-          leading: Icon(Icons.pie_chart),
+          leading: Icon(Icons.pie_chart, color: Colors.black87),
           title: CustomText(text: "vendors Spend Report"),
         ),
         Divider(),
@@ -98,14 +98,14 @@ class DrawerCustom extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, '/contract-list');
           },
-          leading: Icon(Icons.featured_play_list_sharp),
+          leading: Icon(Icons.featured_play_list_sharp, color: Colors.black87),
           title: CustomText(text: "All contracts"),
         ),
         ListTile(
           onTap: () {
             Navigator.pushNamed(context, '/contract-edit-history');
           },
-          leading: Icon(Icons.history),
+          leading: Icon(Icons.history, color: Colors.black87),
           title: CustomText(text: "Edit History"),
         ),
         Divider(),
@@ -119,14 +119,14 @@ class DrawerCustom extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, '/rate-vendor');
           },
-          leading: Icon(Icons.star_rate),
+          leading: Icon(Icons.star_rate, color: Colors.black87),
           title: CustomText(text: "Rate your Vendors"),
         ),
         ListTile(
           onTap: () {
             Navigator.pushNamed(context, '/rate-vendor-review');
           },
-          leading: Icon(Icons.rate_review),
+          leading: Icon(Icons.rate_review, color: Colors.black87,),
           title: CustomText(text: "Vendors Review"),
         ),
       ]),
@@ -199,7 +199,7 @@ class _BodyState extends State<Body> {
                             },
                             controller: searchController,
                             decoration: InputDecoration(
-                              hintText: "Tìm kiếm nhà cung cấp theo sản phẩm",
+                              hintText: "Gợi ý nhà cung cấp theo sản phẩm",
                               border: InputBorder.none,
                               prefixIcon: Icon(Icons.search),
                               suffixIcon: GestureDetector(
@@ -381,6 +381,30 @@ class _BodyState extends State<Body> {
                           ),
                         );
                       }),
+                ),
+                Container(
+                  height: 40,
+                  // color: Color(0xFFD6D6D6),
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 5,
+                          blurRadius: 3,
+                          offset: Offset(4, 5), // changes position of shadow
+                        )
+                      ]
+                  ),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right : 15.0),
+                        child:  value == false ?  CustomText(text: 'Số lượng: ' + vendorList.length.toString())
+                        :  CustomText(text: 'Số lượng: ' + recommendVendorList.length.toString())
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
