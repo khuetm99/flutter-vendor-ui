@@ -14,7 +14,11 @@ List<Contract> contractList = [
       product: 'Computer',
       checkBox: false,
       editDate: '18/01/2021',
-      editContent: 'Gia hạn hợp đồng cung cấp'),
+      editContent: 'Gia hạn hợp đồng cung cấp',
+      mainContact: 'Nguyen Vu',
+      emailContact: 'vu@gmail.com',
+      mobileNumber: '0931 555 444'
+  ),
   Contract(
       contractNumber: 'CNTR_2',
       title: 'Hop dong cung cap vat tu',
@@ -28,7 +32,11 @@ List<Contract> contractList = [
       product: 'Computer',
       checkBox: false,
       editDate: '18/01/2021',
-      editContent: 'Thay đổi chi phí cung cấp sản phẩm'),
+      editContent: 'Thay đổi chi phí cung cấp sản phẩm',
+      mainContact: 'Tran Thi Tram',
+      emailContact: 'tram@gmail.com',
+      mobileNumber: '0931 222 541'
+  ),
 ];
 
 List<Contract> contractPrintList = [];

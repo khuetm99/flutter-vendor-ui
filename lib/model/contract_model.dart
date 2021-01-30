@@ -9,6 +9,9 @@ class Contract {
   final String amount;
   final String startDate;
   final String endDate;
+  final String mainContact;
+  final String emailContact;
+  final String mobileNumber;
   bool checkBox;
   String editDate;
   String editContent;
@@ -27,5 +30,8 @@ class Contract {
       this.checkBox,
       this.editDate,
       this.editContent,
+      this.mainContact,
+      this.emailContact,
+      this.mobileNumber,
   });
 }

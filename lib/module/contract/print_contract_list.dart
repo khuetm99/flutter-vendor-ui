@@ -161,38 +161,57 @@ class PrintContractListPage extends StatelessWidget {
                     ),
                   ),
                   pw.Padding(
+                    padding: pw.EdgeInsets.only(top : 15, left : 20),
+                    child:
+                    pw.Row(
+                        children:[
+                          pw.Text('Main Contact Person : '+ contractList[i].mainContact, style: pw.TextStyle(fontSize: 23)),
+                        ]
+                    ),
+                  ),
+                  pw.Padding(
+                    padding: pw.EdgeInsets.only(top : 15, left : 20),
+                    child:
+                    pw.Row(
+                        children:[
+                          pw.Text('Official Email : ' + contractList[i].emailContact, style: pw.TextStyle(fontSize: 23)),
+                        ]
+                    ),
+                  ),
+                  pw.Padding(
+                    padding: pw.EdgeInsets.only(top : 15, left : 20),
+                    child:
+                    pw.Row(
+                        children:[
+                          pw.Text('Mobile Number : ' + contractList[i].mobileNumber, style: pw.TextStyle(fontSize: 23)),
+                        ]
+                    ),
+                  ),
+                  pw.Padding(
                     padding: pw.EdgeInsets.only(top : 20),
                     child:
                     pw.Row(
                         children:[
-                          pw.Text('Contact Information ' , style: pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)),
+                          pw.Text('Hop dong co hieu luc tu ngay: ' ,style: pw.TextStyle(fontSize: 25,  fontWeight: pw.FontWeight.bold)),
+                          pw.Text(contractList[i].startDate,style: pw.TextStyle(fontSize: 25)),
                         ]
                     ),
                   ),
                   pw.Padding(
-                    padding: pw.EdgeInsets.only(top : 15, left : 20),
+                    padding: pw.EdgeInsets.only(top : 20),
                     child:
                     pw.Row(
+                        mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                         children:[
-                          pw.Text('Main Contact Person : '+ contractList[i].amount, style: pw.TextStyle(fontSize: 23)),
-                        ]
-                    ),
-                  ),
-                  pw.Padding(
-                    padding: pw.EdgeInsets.only(top : 15, left : 20),
-                    child:
-                    pw.Row(
-                        children:[
-                          pw.Text('Official Email : ' + contractList[i].contract, style: pw.TextStyle(fontSize: 23)),
-                        ]
-                    ),
-                  ),
-                  pw.Padding(
-                    padding: pw.EdgeInsets.only(top : 15, left : 20),
-                    child:
-                    pw.Row(
-                        children:[
-                          pw.Text('Mobile Number : ' + contractList[i].contract, style: pw.TextStyle(fontSize: 23)),
+                          pw.Container(
+                            margin: pw.EdgeInsets.only(left: 50),
+                            child : pw.Text('BEN MUA ' ,style: pw.TextStyle(fontSize: 25,  fontWeight: pw.FontWeight.bold)),
+                          ),
+                          pw.Container(
+                            margin: pw.EdgeInsets.only(right: 50),
+                            child : pw.Text('BEN BAN ' ,style: pw.TextStyle(fontSize: 25,  fontWeight: pw.FontWeight.bold)),
+
+                          ),
                         ]
                     ),
                   ),

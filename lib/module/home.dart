@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vendor_ui/color.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
 import 'package:flutter_vendor_ui/model/notification_data.dart';
 import 'package:flutter_vendor_ui/model/vendor_data.dart';
@@ -20,9 +21,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF00BFA5),
-        title: CustomText(text: 'Recommend', color: Colors.white, size: 18),
+        title: CustomText(text: 'Recommend', color: Colors.white, size: 18,
+          weight: FontWeight.w500,),
         centerTitle: true,
-        bottomOpacity: 0,
+        elevation: 0,
         actions: [
           isPress == false ? Badge(
             badgeColor:Colors.redAccent,
@@ -141,8 +143,11 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   TextEditingController searchController = TextEditingController();
   bool isHardware = false;
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return ChangeNotifierProvider.value(
       value: HomeBloc(),
       child: Consumer<HomeBloc>(
@@ -157,35 +162,60 @@ class _BodyState extends State<Body> {
             builder: (context, value, child)
             => Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    margin: EdgeInsets.only(top:10),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    child: TextField(
-                      onChanged: (text) {
-                          bloc.event.add(SearchEvent(text: text));
-                      },
-                      controller: searchController,
-                      decoration: InputDecoration(
-                        hintText: "Tìm kiếm nhà cung cấp theo sản phẩm",
-                        border: InputBorder.none,
-                        prefixIcon: Icon(Icons.search),
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            searchController.clear();
-                            bloc.event.add(SearchEvent(text: searchController.text));
-                          },
-                          child: Icon(
-                            Icons.clear,
+                Container(
+                  height: size.height *0.1 -25 ,
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: size.height *0.1 -50,
+                        decoration: BoxDecoration(
+                          color:  Color(0xFF00BFA5),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(25),
+                            bottomRight: Radius.circular(25)
+                          )
+                        ),
+                      ),
+                      Positioned(
+                        bottom : 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.grey, width: 1),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            boxShadow: [BoxShadow(
+                              offset: Offset(0,10),
+                              blurRadius: 60,
+                              color: AppColors.primaryColor.withOpacity(0.23),
+                            )
+                            ]
+                          ),
+                          child: TextField(
+                            onChanged: (text) {
+                                bloc.event.add(SearchEvent(text: text));
+                            },
+                            controller: searchController,
+                            decoration: InputDecoration(
+                              hintText: "Tìm kiếm nhà cung cấp theo sản phẩm",
+                              border: InputBorder.none,
+                              prefixIcon: Icon(Icons.search),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  searchController.clear();
+                                  bloc.event.add(SearchEvent(text: searchController.text));
+                                },
+                                child: Icon(
+                                  Icons.clear,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -203,7 +233,7 @@ class _BodyState extends State<Body> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 180,
+                              height: 160,
                               child: Card(
                                 shadowColor: Color(0x802196F3),
                                 elevation: 5.0,
@@ -217,7 +247,10 @@ class _BodyState extends State<Body> {
                                           Padding(
                                             padding: const EdgeInsets.only(left: 5.0),
                                             child:
-                                                CustomText(text: vendorList[index].name),
+                                                CustomText(
+                                                  text: vendorList[index].name,
+                                                    weight: FontWeight.bold,
+                                                  color:Color(0xFF0D47A1),),
                                           ),
                                           Spacer(),
                                           CustomText(text: vendorList[index].quality),
@@ -280,7 +313,7 @@ class _BodyState extends State<Body> {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 180,
+                              height: 160,
                               child: Card(
                                 shadowColor: Color(0x802196F3),
                                 elevation: 5.0,
@@ -294,7 +327,9 @@ class _BodyState extends State<Body> {
                                           Padding(
                                             padding: const EdgeInsets.only(left: 5.0),
                                             child:
-                                            CustomText(text: recommendVendorList[index].name),
+                                            CustomText(text: recommendVendorList[index].name,
+                                              weight: FontWeight.bold,
+                                                color:Color(0xFF0D47A1)),
                                           ),
                                           Spacer(),
                                           CustomText(text: recommendVendorList[index].quality),
