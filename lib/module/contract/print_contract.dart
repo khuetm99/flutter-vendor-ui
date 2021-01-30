@@ -195,6 +195,81 @@ class PrintContractPage extends StatelessWidget {
                       ]
                   ),
                 ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 20),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('Loai hop dong: ' ,style: pw.TextStyle(fontSize: 25,  fontWeight: pw.FontWeight.bold)),
+                        pw.Text(contract.type,style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 10),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('Thoi gian thưc hien hop dong: ' , style: pw.TextStyle(fontSize: 25,  fontWeight: pw.FontWeight.bold)),
+                        pw.Text(contract.startDate,style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 20),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('Hieu luc hop dong', style: pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 10),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('1. Hop dong co hieu luc ke tu ngay ', style: pw.TextStyle(fontSize: 25)),
+                        pw.Text(contract.startDate,style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 10),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('2. Hop dong het hieu luc sau khi hai ben thanh ly hop dong theo quy dinh. ', style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 10),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('Hop dong duoc lap thanh hai bo, ben mua mot bo, ben ban mot bo, cac bo hop dong co gia tri phap ly nhu nhau. ', style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 20),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('BEN MUA        BEN BAN ', style: pw.TextStyle(fontSize: 25,fontWeight: pw.FontWeight.bold)),
+                      ]
+                  ),
+                ),
+                pw.Padding(
+                  padding: pw.EdgeInsets.only(top : 20),
+                  child:
+                  pw.Row(
+                      children:[
+                        pw.Text('(chu ky ho ten)        (chu ky ho ten) ', style: pw.TextStyle(fontSize: 25)),
+                      ]
+                  ),
+                ),
               ]);
         },
       ),
