@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
-import 'package:flutter_vendor_ui/model/notification_data.dart';
+import 'package:flutter_vendor_ui/model/mail_data.dart';
 
 class NotificationPage extends StatelessWidget {
   @override
@@ -8,14 +8,16 @@ class NotificationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
-          onPressed: (){
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
         backgroundColor: Color(0xFF00BFA5),
-        title:
-        CustomText(text: 'Notification', color: Colors.white, size: 18),
+        title: CustomText(text: 'Notification', color: Colors.white, size: 18),
         centerTitle: true,
         bottomOpacity: 0,
       ),
@@ -33,11 +35,11 @@ class _NotificationListState extends State<NotificationList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: notificationList.length,
+      itemCount: mailList.length,
       itemBuilder: (_, index) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(
-          height: 120,
+          height: 150,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.white,
@@ -47,29 +49,56 @@ class _NotificationListState extends State<NotificationList> {
                     offset: Offset(3, 2),
                     blurRadius: 30)
               ]),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top : 20.0, left: 10, bottom: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomText(text: 'Title : ', color: Colors.blueGrey, weight: FontWeight.bold,),
-                    CustomText(text: notificationList[index].title),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 20.0, left: 10, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: mailList[index].email,
+                        color: Colors.black87,
+                        weight: FontWeight.bold,
+                        size: 17,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomText(text: 'Content : ',color: Colors.blueGrey, weight: FontWeight.bold,),
-                    CustomText(text: notificationList[index].content),
-                  ],
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 10, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Title : ',
+                        color: Colors.blueGrey,
+                        weight: FontWeight.bold,
+                      ),
+                      CustomText(text: mailList[index].title),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Content : ',
+                        color: Colors.blueGrey,
+                        weight: FontWeight.bold,
+                      ),
+                      CustomText(text: mailList[index].content),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

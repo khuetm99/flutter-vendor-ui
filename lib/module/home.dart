@@ -31,13 +31,13 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white,
               fontSize: 14,
             ),),
-            child: IconButton(icon: Icon(Icons.notifications), onPressed: () {
+            child: IconButton(icon: Icon(Icons.mail), onPressed: () {
               setState(() {
                 isPress = true;
               });
               Navigator.pushNamed(context, '/notification');
             }),
-          ) :   IconButton(icon: Icon(Icons.notifications), onPressed: () {
+          ) :   IconButton(icon: Icon(Icons.mail), onPressed: () {
             setState(() {
               isPress = true;
             });
@@ -57,7 +57,7 @@ class DrawerCustom extends StatelessWidget {
     return Drawer(
       child: ListView(children: <Widget>[
         Container(
-            height: 50, decoration: BoxDecoration(color: Color(0xFF00BFA5))),
+            height: 54, decoration: BoxDecoration(color: Color(0xFF00BFA5))),
         Padding(
           padding: const EdgeInsets.only(top : 8.0),
           child: ListTile(
