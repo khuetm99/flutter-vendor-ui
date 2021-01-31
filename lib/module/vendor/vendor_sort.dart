@@ -66,7 +66,7 @@ class _VendorSortListState extends State<VendorSortList> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          fontFamily: 'Times New Roman'
+                          fontFamily: 'Muli'
                         ),
                       ),
                     ],

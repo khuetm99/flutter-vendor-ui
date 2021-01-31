@@ -165,7 +165,7 @@ class PrintContractListPage extends StatelessWidget {
                     child:
                     pw.Row(
                         children:[
-                          pw.Text('Main Contact Person : '+ contractList[i].mainContact, style: pw.TextStyle(fontSize: 23)),
+                          pw.Text('Nguoi dai dien: '+ contractList[i].mainContact, style: pw.TextStyle(fontSize: 23)),
                         ]
                     ),
                   ),
@@ -174,7 +174,7 @@ class PrintContractListPage extends StatelessWidget {
                     child:
                     pw.Row(
                         children:[
-                          pw.Text('Official Email : ' + contractList[i].emailContact, style: pw.TextStyle(fontSize: 23)),
+                          pw.Text('Email : ' + contractList[i].emailContact, style: pw.TextStyle(fontSize: 23)),
                         ]
                     ),
                   ),
@@ -183,7 +183,7 @@ class PrintContractListPage extends StatelessWidget {
                     child:
                     pw.Row(
                         children:[
-                          pw.Text('Mobile Number : ' + contractList[i].mobileNumber, style: pw.TextStyle(fontSize: 23)),
+                          pw.Text('So dien thoai : ' + contractList[i].mobileNumber, style: pw.TextStyle(fontSize: 23)),
                         ]
                     ),
                   ),

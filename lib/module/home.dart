@@ -171,8 +171,8 @@ class _BodyState extends State<Body> {
                         decoration: BoxDecoration(
                           color:  Color(0xFF00BFA5),
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(25),
-                            bottomRight: Radius.circular(25)
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50)
                           )
                         ),
                       ),

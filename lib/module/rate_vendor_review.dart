@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vendor_ui/custom_text.dart';
 import 'package:flutter_vendor_ui/model/vendor_data.dart';
 import 'package:flutter_vendor_ui/simple_account_menu.dart';
+import 'package:rating_bar/rating_bar.dart';
 
 class RateVendorReviewPage extends StatelessWidget {
   @override
@@ -46,14 +47,14 @@ class _VendorReviewListState extends State<VendorReviewList> {
                     arguments: vendorList[index]);
               },
               child: Container(
-                height: 150,
+                height: 160,
                 child: Card(
                   shadowColor: Color(0x802196F3),
                   elevation: 5.0,
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left :8.0, top:8, bottom: 3),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -87,7 +88,7 @@ class _VendorReviewListState extends State<VendorReviewList> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left :12.0, top: 2),
+                        padding: const EdgeInsets.only(left :12.0, bottom: 2),
                         child: Row(
                           mainAxisAlignment:
                           MainAxisAlignment.start,
@@ -99,14 +100,14 @@ class _VendorReviewListState extends State<VendorReviewList> {
                       ),
                       Spacer(),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left :8.0),
                         child: Row(
                           mainAxisAlignment:
                           MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.only(left: 5.0),
+                              const EdgeInsets.only(left: 5.0, top: 5, bottom: 2),
                               child: RichText(
                                   text: TextSpan(
                                       text : 'Quality : ',
@@ -127,13 +128,26 @@ class _VendorReviewListState extends State<VendorReviewList> {
                                   )),
                             ),
                            Spacer(),
-                            Padding(
-                              padding:
-                              const EdgeInsets.only(right: 8.0),
-                              child: CustomText(
-                                  text:
-                                  vendorList[index].rateNum,
-                                  color: Colors.blueGrey, weight: FontWeight.bold,),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left : 12.0, top: 10, right: 8, bottom: 8),
+                        child: Row(
+                          children: [
+                            CustomText(text: vendorList[index].rateNum + ' ',
+                              size: 14,
+                              weight: FontWeight.w500,
+                             color: Colors.blueGrey,),
+                            RatingBar.readOnly(
+                              size: 20,
+                              maxRating: 10,
+                              filledColor: Colors.yellow,
+                              initialRating: double.parse(vendorList[index].rateNum),
+                              isHalfAllowed: true,
+                              halfFilledIcon: Icons.star_half,
+                              filledIcon: Icons.star,
+                              emptyIcon: Icons.star_border,
                             ),
                           ],
                         ),
@@ -161,6 +175,7 @@ class _VendorReviewListState extends State<VendorReviewList> {
         child: Row(
           children: [
             IconButton(icon: Icon(Icons.search), onPressed: () {
+              Navigator.pushNamed(context, '/search-vendor');
 
             }),
             IconButton(icon: Icon(Icons.sort), onPressed: () {

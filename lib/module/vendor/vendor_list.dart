@@ -161,7 +161,8 @@ class _VendorListState extends State<VendorList> {
                                             padding: const EdgeInsets.only(
                                                 left: 5.0),
                                             child: CustomText(
-                                                text: vendorList[index].name),
+                                                text: vendorList[index].name,
+                                                weight: FontWeight.bold),
                                           ),
                                           Spacer(),
                                           SimpleAccountMenu(
@@ -273,7 +274,8 @@ class _VendorListState extends State<VendorList> {
                                         padding:
                                             const EdgeInsets.only(left: 5.0),
                                         child: CustomText(
-                                            text: vendorList[index].name),
+                                            text: vendorList[index].name,
+                                        weight: FontWeight.bold,),
                                       ),
                                       Spacer(),
                                       SimpleAccountMenu(

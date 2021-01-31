@@ -35,6 +35,7 @@ dependencies:
   fl_chart: ^0.12.2
   intl: ^0.16.0
   badges: ^1.1.6
+  rating_bar: ^0.2.0
 
 dev_dependencies:
   flutter_test:
